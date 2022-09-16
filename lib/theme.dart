@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppColors {
   static const secondary = Color(0xFF3B76F6);
@@ -30,7 +29,7 @@ abstract class AppTheme {
   static const accentColor = AppColors.accent;
   static final visualDensity = VisualDensity.adaptivePlatformDensity;
 
-  // Light theme and its settings.
+  /// Light theme and its settings.
   static ThemeData light() => ThemeData(
         brightness: Brightness.light,
         accentColor: accentColor,
@@ -46,7 +45,7 @@ abstract class AppTheme {
         iconTheme: const IconThemeData(color: AppColors.iconDark),
       );
 
-  // Dark theme and its settings.
+  /// Dark theme and its settings.
   static ThemeData dark() => ThemeData(
         brightness: Brightness.dark,
         accentColor: accentColor,

@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class Call_Page extends StatelessWidget {
-  const Call_Page({Key? key}) : super(key: key);
+class CallsPage extends StatelessWidget {
+  const CallsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('callpage'),
+    return const Center(
+      child: Text('CallsPage'),
     );
   }
 }

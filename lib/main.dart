@@ -1,18 +1,20 @@
-import 'package:chatter/screeens/screens.dart'; 
+import 'package:chatter/screeens/home_screens.dart';
 import 'package:chatter/theme.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: AppTheme.dark(), title: 'murschat', home: HomeScreen());
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      themeMode: ThemeMode.dark,
+      title: 'Chatter',
+      home: HomeScreen(),
+    );
   }
 }

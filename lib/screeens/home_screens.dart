@@ -3,8 +3,13 @@ import 'package:chatter/screeens/pages/contact_page.dart';
 import 'package:chatter/screeens/pages/message.dart';
 import 'package:chatter/screeens/pages/notification.dart';
 import 'package:chatter/theme.dart';
+import 'package:chatter/wedgets/glowing_action_buttin.dart';
+import 'package:chatter/wedgets/wedgets.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../helpers.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -13,10 +18,10 @@ class HomeScreen extends StatelessWidget {
   final ValueNotifier<String> title = ValueNotifier('Messages');
 
   final pages = const [
-    Message_page(),
-    Notification_Page(),
-    Call_Page(),
-    Contact_Page(),
+    MessagesPage(),
+    NotificationsPage(),
+    CallsPage(),
+    ContactsPage(),
   ];
 
   final pageTitles = const [
@@ -50,6 +55,22 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
+        leadingWidth: 54,
+        leading: Align(
+          alignment: Alignment.centerRight,
+          child: IconBackground(
+            icon: Icons.search,
+            onTap: () {
+              print('TODO search');
+            },
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Avatar.small(url: Helpers.randomPictureUrl()),
+          ),
+        ],
       ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
@@ -114,6 +135,16 @@ class __BottomNavigationBarState extends State<_BottomNavigationBar> {
                 icon: CupertinoIcons.bell_solid,
                 isSelected: (selectedIndex == 1),
                 onTap: handleItemSelected,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: GlowingActionButton(
+                  color: AppColors.secondary,
+                  icon: CupertinoIcons.add,
+                  onPressed: () {
+                    print('TODO on new message');
+                  },
+                ),
               ),
               _NavigationBarItem(
                 index: 2,
